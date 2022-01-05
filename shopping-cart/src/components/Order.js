@@ -4,42 +4,46 @@ import image2 from "../assets/image2.jpg";
 export default function Order() {
   return (
     <div className="order-box">
-      <h1 className="fs-400">Your Order</h1>
+      <h1 className="fsc-400">Your Order</h1>
       <div className="order-item">
-        <img src={image2} />
+        <img src={image2} alt="ordered item" />
         <div
           style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}
         >
-          <h2 className="fs-500">Jeans with sequins</h2>
+          <h2 style={{ fontWeight: 500 }} className="fsc-500">
+            Jeans with sequins
+          </h2>
           <div style={{ display: "flex", gap: "0.5rem" }}>
-            <p className="fs-300">
-              Size: <span>XL</span>
+            <p className="fsc-300" style={{ color: "grey" }}>
+              Size: <span style={{ color: "black" }}>XL</span>
             </p>
-            <p>
-              Color: <span>Blue</span>
+            <p style={{ color: "grey" }}>
+              Color: <span style={{ color: "black" }}>Blue</span>
             </p>
           </div>
-          <h2 className="fs-500">
-            $39,00 <span>x2</span>
+          <h2 className="fsc-500" style={{ fontWeight: 500 }}>
+            $39,00 <span style={{ fontWeight: 300, color: "grey" }}>x 02</span>
           </h2>
         </div>
       </div>
       <div className="order-item">
-        <img src={image1} />
+        <img src={image1} alt="ordered item" />
         <div
           style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}
         >
-          <h2 className="fs-500">Jeans with sequins</h2>
+          <h2 style={{ fontWeight: 500 }} className="fsc-500">
+            Robinson Printed
+          </h2>
           <div style={{ display: "flex", gap: "0.5rem" }}>
-            <p className="fs-300">
-              Size: <span>XL</span>
+            <p className="fsc-300" style={{ color: "grey" }}>
+              Size: <span style={{ color: "black" }}>XXL</span>
             </p>
-            <p>
-              Color: <span>Blue</span>
+            <p style={{ color: "grey" }}>
+              Color: <span style={{ color: "black" }}>Blue</span>
             </p>
           </div>
-          <h2 className="fs-500">
-            $39,00 <span>x2</span>
+          <h2 className="fsc-500" style={{ fontWeight: 500 }}>
+            $39,00 <span style={{ fontWeight: 300, color: "grey" }}>x 01</span>
           </h2>
         </div>
       </div>
@@ -49,15 +53,21 @@ export default function Order() {
         style={{ display: "flex", justifyContent: "space-between" }}
       >
         <p>Delivery</p>
-        <p>$20(Express)</p>
+        <p>
+          $20 <span style={{ color: "grey" }}>(Express)</span>
+        </p>
       </div>
-      <div className="order-detail" style={{ display: "flex", gap: "8.8rem" }}>
+      <div className="order-detail" style={{ display: "flex", gap: "9.4rem" }}>
         <p>Discount</p>
         <p>-$10</p>
       </div>
       <button
-        className="fs-600 order-total-btn"
-        style={{ display: "flex", justifyContent: "space-between" }}
+        className="fsc-600 order-total-btn"
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          fontWeight: 600,
+        }}
       >
         <p>Total</p>
         <span>$117,00</span>

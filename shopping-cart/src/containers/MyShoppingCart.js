@@ -8,9 +8,9 @@ export default function MyShoppingCart() {
   return (
     <div className="body">
       <div className="container">
-        <h1 className="fs-700">Shopping Cart</h1>
+        <h1 className="fsc-700">Shopping Cart</h1>
         <Breadcrumb />
-        <main className="main">
+        <main className="main-Cstm">
           <div className="left-main">
             <Details />
             <PaymentMethods />
