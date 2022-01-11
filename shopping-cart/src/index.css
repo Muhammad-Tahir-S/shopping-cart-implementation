@@ -348,7 +348,7 @@ img {
   position: absolute;
   background-color: rgb(var(--clr-black));
   margin-top: -0.5px;
-  margin-right: 0.5px;
+  margin-left: -6px;
 }
 
 .card-header {
