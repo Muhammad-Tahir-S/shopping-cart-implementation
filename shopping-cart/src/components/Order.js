@@ -1,74 +1,60 @@
-import React from "react";
+import OrderItem from "./OrderItem";
 import image1 from "../assets/image1.jpg";
 import image2 from "../assets/image2.jpg";
+
 export default function Order() {
+  const orderDetails = [
+    {
+      name: "Jeans with sequins",
+      imageSrc: image2,
+      size: "XL",
+      color: "Blue",
+      price: "39,00",
+      amount: "02",
+    },
+    {
+      name: "Robinson Printed",
+      imageSrc: image1,
+      size: "XXL",
+      color: "Blue",
+      price: "29,00",
+      amount: "01",
+    },
+  ];
+
   return (
     <div className="order-box">
       <h1 className="fsc-400">Your Order</h1>
-      <div className="order-item">
-        <img src={image2} alt="ordered item" />
-        <div
-          style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}
-        >
-          <h2 style={{ fontWeight: 500 }} className="fsc-500">
-            Jeans with sequins
-          </h2>
-          <div style={{ display: "flex", gap: "0.5rem" }}>
-            <p className="fsc-300" style={{ color: "grey" }}>
-              Size: <span style={{ color: "black" }}>XL</span>
-            </p>
-            <p style={{ color: "grey" }}>
-              Color: <span style={{ color: "black" }}>Blue</span>
-            </p>
-          </div>
-          <h2 className="fsc-500" style={{ fontWeight: 500 }}>
-            $39,00 <span style={{ fontWeight: 300, color: "grey" }}>x 02</span>
-          </h2>
+      {orderDetails.map((orderDetail, index) => (
+        <OrderItem
+          key={index}
+          name={orderDetail.name}
+          imageSrc={orderDetail.imageSrc}
+          size={orderDetail.size}
+          color={orderDetail.color}
+          price={orderDetail.price}
+          amount={orderDetail.amount}
+        />
+      ))}
+      <div>
+        <div className="order-summary">
+          <p className="order-charge">Delivery</p>
+          <p className="order-fee">
+            $20 <span className="text-grey">(Express)</span>
+          </p>
+        </div>
+        <div className="order-summary">
+          <p
+            className="order-charge flex"
+            style={{ justifyContent: "space-between" }}
+          >
+            Discount <span>-</span>
+          </p>
+          <p className="order-fee">$10</p>
         </div>
       </div>
-      <div className="order-item">
-        <img src={image1} alt="ordered item" />
-        <div
-          style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}
-        >
-          <h2 style={{ fontWeight: 500 }} className="fsc-500">
-            Robinson Printed
-          </h2>
-          <div style={{ display: "flex", gap: "0.5rem" }}>
-            <p className="fsc-300" style={{ color: "grey" }}>
-              Size: <span style={{ color: "black" }}>XXL</span>
-            </p>
-            <p style={{ color: "grey" }}>
-              Color: <span style={{ color: "black" }}>Blue</span>
-            </p>
-          </div>
-          <h2 className="fsc-500" style={{ fontWeight: 500 }}>
-            $39,00 <span style={{ fontWeight: 300, color: "grey" }}>x 01</span>
-          </h2>
-        </div>
-      </div>
-      <div
-        id="order-detail-1"
-        className="order-detail"
-        style={{ display: "flex", justifyContent: "space-between" }}
-      >
-        <p>Delivery</p>
-        <p>
-          $20 <span style={{ color: "grey" }}>(Express)</span>
-        </p>
-      </div>
-      <div className="order-detail" style={{ display: "flex", gap: "9.4rem" }}>
-        <p>Discount</p>
-        <p>-$10</p>
-      </div>
-      <button
-        className="fsc-600 order-total-btn"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          fontWeight: 600,
-        }}
-      >
+
+      <button className="fsc-600 order-total-btn">
         <p>Total</p>
         <span>$117,00</span>
       </button>

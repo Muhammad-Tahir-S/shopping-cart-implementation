@@ -10,7 +10,7 @@ export default function MyShoppingCart() {
       <div className="container">
         <h1 className="fsc-700">Shopping Cart</h1>
         <Breadcrumb />
-        <main className="main-Cstm">
+        <main className="main">
           <div className="left-main">
             <Details />
             <PaymentMethods />

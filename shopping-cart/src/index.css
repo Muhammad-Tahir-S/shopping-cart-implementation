@@ -1,3 +1,7 @@
+@import "antd/lib/button/style";
+@import "antd/lib/form/style";
+@import "antd/lib/input/style";
+
 /* Box Sizing  */
 * *::before *::after {
   box-sizing: border-box;
@@ -48,6 +52,7 @@ p {
   --clr-total-grey: 250, 250, 250, 255;
   --clr-white: 255, 255, 255, 255;
   --clr-black: 28, 28, 28, 255;
+  --clr-text-grey: 128, 128, 128, 1;
 
   /* font-families */
   --ff-poppins: "Poppins", sans-serif;
@@ -69,6 +74,10 @@ p {
 /* fonts */
 .uppercase {
   text-transform: uppercase;
+}
+
+.pointer-cursor {
+  cursor: pointer;
 }
 
 .fsc-900 {
@@ -96,6 +105,14 @@ p {
   font-size: var(--fs-200);
 }
 
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
 .fsc-900,
 .fsc-800,
 .fsc-700,
@@ -103,7 +120,22 @@ p {
   line-height: 1.1;
 }
 
+.text-black {
+  color: rgb(var(--clr-black));
+}
+.text-grey {
+  color: rgb(var(--clr-text-grey));
+}
 /* fonts */
+
+.flex {
+  display: flex;
+}
+
+/* ------------- */
+/* Custom Properties */
+/* ------------- */
+
 button {
   cursor: pointer;
 }
@@ -111,10 +143,10 @@ button {
   background-color: rgb(var(--clr-white));
   padding: 4rem 4rem;
   margin: 2rem;
-  max-width: 90%;
+  max-width: 100%;
 }
 
-.main-Cstm {
+.main {
   display: flex;
   gap: 1rem;
 }
@@ -161,10 +193,15 @@ span.detail-number::after {
   flex-grow: 6;
   padding-right: 9rem;
   max-width: 60%;
+  gap: 0.5rem;
 }
 
 .main-details > span {
   font-size: 0.9rem;
+}
+
+.main-details > p {
+  font-weight: 500;
 }
 
 .detail-title {
@@ -198,7 +235,7 @@ span.detail-number::after {
   border: 1px solid #e7e7e7;
   padding: 2rem;
   border-radius: 0.7rem;
-  margin-top: 1.93rem;
+  margin-top: 1rem;
 }
 
 .order-item {
@@ -238,17 +275,29 @@ img {
   border-radius: 0.5rem;
 }
 
+.order-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
 .order-detail {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.order-summary {
+  display: flex;
   margin: 1rem 0;
 }
 
-#order-detail-1 {
+.order-summary:first-child {
   position: relative;
   margin-top: 2rem;
   z-index: 1;
 }
 
-#order-detail-1::after {
+.order-summary:first-child::after {
   position: absolute;
   z-index: -1;
   content: " ";
@@ -259,7 +308,18 @@ img {
   margin-top: -0.7rem;
 }
 
+.order-charge {
+  flex: 2 60%;
+}
+
+.order-fee {
+  flex: 1 30%;
+}
+
 .order-total-btn {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
   width: 110%;
   padding: 3rem 1.5rem;
   margin-left: -1rem;
@@ -279,14 +339,14 @@ img {
 
 #payment-detail-number {
   position: relative;
-  color: white;
+  color: rgb(var(--clr-white));
   margin-left: 1.3rem;
   margin-right: 2rem;
 }
 
 #payment-detail-number::after {
   position: absolute;
-  background-color: black;
+  background-color: rgb(var(--clr-black));
   margin-top: -0.5px;
   margin-right: 0.5px;
 }
@@ -323,6 +383,26 @@ img {
   width: 20px;
   margin-left: -8.2rem;
 }
+.card-header > p.disabled {
+  z-index: 0;
+}
 .card-header > p.disabled::before {
   background-color: rgb(var(--clr-white));
+}
+
+.react-datepicker__input-container input {
+  display: block;
+  width: 94%;
+  line-height: 56px;
+  border: 1px solid rgb(var(--clr-black));
+  border-radius: 0.5rem;
+}
+
+.react-datepicker__input-container input[type="text" i] {
+  padding-left: 0.6rem;
+  font-size: 1.2rem;
+}
+
+.payment-forms {
+  margin-top: 3rem;
 }
